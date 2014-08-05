@@ -32,7 +32,7 @@ def match_regex_index(question, string_to_match, match_string)
       success = true
       puts "Success! Your match was #{match}\n\n"
     else
-      puts "\nsorry, try again. Your match was #{match.inspect}\n "
+      puts "\nSorry, try again. Your match was #{match.inspect}\n "
     end
 
   end while(success != true)
@@ -51,7 +51,7 @@ A regular expression literal is a pattern between slashes
 EOS
 
 
-match_regex_index("--> Create a regular expression to match exactly 'ruby'", "ruby", "ruby")
+match_regex_index("--> Create a regular expression to match exactly 'ruby'.", "ruby", "ruby")
 
 puts <<-EOS
 
@@ -70,7 +70,7 @@ x - Ignores whitespace and allows comments in regular expressions
 EOS
 
 
-match_regex_index("--> Create a regular expression to match 'ruby' that isn't case sensitive", "RuBy", "RuBy")
+match_regex_index("--> Create a regular expression to match 'ruby' that isn't case sensitive.", "RuBy", "RuBy")
 
 puts <<-EOS
 
@@ -91,7 +91,7 @@ You can also use a match operator ~= which returns nil if no match or the index 
        --------------^---
 m2 == #{m2 = "The future is Ruby" =~ /Ruby/}
 
-Press return
+Press Return
 EOS
 
 gets
@@ -131,7 +131,7 @@ A dot matches any character with the exception of a newline.
 
 This can often overmatch because it is so general.
 
-Press return
+Press Return
 EOS
 gets
 
@@ -151,6 +151,7 @@ By putting a caret ^ at the beginning of a character class you will perform a ne
 'Run' =~ /[^A-Fa-f0-9]/ == #{('Run' =~ /[A-Fa-f0-9]/).inspect}
 
 A character class will only match a single character.
+
 Press Return
 EOS
 
@@ -177,7 +178,7 @@ This is a greedy quantifier. It wants to find as many matches as possible
 This is a lazy quantifier. It will find the first one available because it uses the ?.
 /<.+?>/.match("<a><b>") #=> #<MatchData "<a>">
 
-Press return
+Press Return
 EOS
 
 gets
@@ -230,6 +231,7 @@ The pattern below matches a vowel followed by 2 word characters
 /(.+)/ will match any 1 or more non-newline characters
 /(.+)/.match("\n")  => nil
 
+Press Return
 EOS
 
 gets
@@ -257,6 +259,8 @@ type_id.to_s.match(/^[0-9]/)
 
 request.user_agent.match(/Firefox[\/\s][0-3][^\d][^\s]*/)
   -- matches it starts with FireFox/ and has a number of 0,1,2 or 3, followed by a non digit, followed by a or or more non space characters
+
+
 EOS
 
 
